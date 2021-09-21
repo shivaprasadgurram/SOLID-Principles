@@ -1,0 +1,20 @@
+By Shiva Prasad Gurram
+
+The principle states that we must use abstraction (abstract classes and interfaces) instead of concrete implementations. 
+High-level modules should not depend on the low-level module but both should depend on the abstraction
+
+let’s consider a best use case
+You go to a local store to buy something, and you decide to pay for it by using your card. So, when you give your card to the clerk for making
+the payment, the clerk doesn’t bother to check what kind of card you have given.
+Even if you have given a debit card or credit card it not even matter; they will simply swipe it.
+this is what the abstraction between clerk and you to relay on Card processing
+
+Classes should not be tightly coupled.
+
+Lets assume you went to shop and decided to pay via "DebitCard" , and you already have a class "ShoppingMall" which holds "DebitCard". So here 
+"ShoppingMall" is tightly coupled with "DebitCard", what if there is an issue with your "DebitCard" and you decided to go with "CreditCard",
+in this case you have to change your "ShoppingMall" class to deal with "CreditCard" instead of "DebitCard", this is completely wrong way to design
+an application.
+
+because to follow DIP we need to design our application in such a way so that my shopping mall payment system should accept any type of ATM Card 
+(it shouldn’t care whether it is debit or credit card)

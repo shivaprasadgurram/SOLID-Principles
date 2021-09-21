@@ -1,0 +1,24 @@
+By Shiva Prasad Gurram
+
+what is OPEN-CLOSED Principle?
+
+It states that “software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification” which means you should be able to extend a class behavior,
+without modifying it.
+
+Lets take NotificationService(created in SRP) as example.
+Currently it holds "sendOTP" method which deal with only "email". What if bank want to send an OTP to mobile phone or Whatsapp number?
+Then we want to modify the source code in "NotificationService", right?
+
+here we are violating OCP because it is not recommended to modify "NotificationService" for each OTP feature.
+
+So to overcome this we need to design our code in such a way that everyone can reuse our feature by just extending it and customize accordingly.
+
+Lets assume , declare an abstract method called "sendOTP" in NotificationService interface and create different classes like 
+1) EmailNotification implements NotificationService
+2) MobileNotification implements NotificationService
+3) WhatsappNotification implements NotificationService
+
+In this case, in future if bank want to send an OTP via any mode like "messenger" or anything , we just need to create a class and implements
+"NotificationService" to override that method as per bank requirement.
+
+
